@@ -1,0 +1,11 @@
+#carouselExampleFade {
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+#carouselExampleFade .carousel-item img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover; /* makes image cover without distortion */
+  filter: brightness(30%);
+}

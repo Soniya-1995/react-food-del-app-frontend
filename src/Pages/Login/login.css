@@ -1,0 +1,45 @@
+:root {
+  --theme-bg: #185a9d;   /* apna Navbar ka color yaha likho */
+  --theme-gradient: linear-gradient(90deg, #18503e, #68abee);
+}
+
+
+/* Full page background with gradient */
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--theme-gradient);;
+  perspective: 1000px; /* enable 3D depth */
+}
+
+/* Card with 3D effect */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25),
+              0 10px 10px rgba(0, 0, 0, 0.22);
+  transform: rotateY(0deg) rotateX(0deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect - makes it pop out */
+.login-card:hover {
+  transform: rotateY(5deg) rotateX(5deg) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Buttons with depth */
+.login-btn {
+  transition: all 0.2s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+}
