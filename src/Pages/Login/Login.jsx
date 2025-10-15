@@ -2,14 +2,16 @@ import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {useNavigate} from 'react-router-dom'
-import "./login.css"; // custom css file
+import "./login.css";
+
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
 const Login = () => {
   const [UserApi, setUserApi] = useState({ email: "", password: "" })
   let navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:3001/api/loginuser", {
+    const response = await fetch(`${BASE_URL}/api/loginuser`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -58,4 +60,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login 

@@ -3,7 +3,10 @@ const app = express();
 const cors = require("cors");
 const upload = require("./Uploads/uploads.js");
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "*" 
+}));
+
 
 
 // Serve static files
@@ -17,7 +20,8 @@ app.use("/api",require("./Routes/orderlist"))
 
 
 const mongoose = require("mongoose")
-mongoose.connect("mongodb+srv://khana_123:khana_123@cluster0.r2kzzl1.mongodb.net/KhanaKhazana")
+const MONGO_URL = ("mongodb+srv://khana_123:khana_123@cluster0.r2kzzl1.mongodb.net/KhanaKhazana")
+mongoose.connect(MONGO_URL)
 .then(()=>{
   console.log("connected");
   

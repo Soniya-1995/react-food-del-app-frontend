@@ -3,6 +3,7 @@ import { useCart, useDispatchCart } from '../../Component/ContextReducer/Context
 import Delete from '@mui/icons-material/Delete';
 import { useNavigate } from 'react-router-dom';
 
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
 const Cart = () => {
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Cart = () => {
     }
      const handleCheckOut = async()=>{
         let userEmail = localStorage.getItem("userEmail");
-        let response = await fetch("http://localhost:3001/api/orderData",{
+        let response = await fetch(`${BASE_URL}/api/orderData`,{
             method : 'POST',
             headers: {
               'Content-Type': 'application/json'

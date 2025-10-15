@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../../Component/Navbar/Navbar'
 import Footer from '../../Component/Footer/Footer'
 import { data } from 'react-router-dom'
+ 
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
 
 const MyOrders = () => {
     const [orderData,setOrderData] = useState("");
     const fetchMyOrder = async ()=>{
         console.log(localStorage.getItem('userEmail'))
-        await fetch("http://localhost:3001/api/myorderData",{
+        await fetch(`${BASE_URL}/api/myorderData`,{
             //credentials : 'include',
             //Origin : "http://localhost:5173/login",
             method : "POST",

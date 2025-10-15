@@ -2,11 +2,14 @@ import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
 const Signup = () => {
     const [UserApi,setUserApi] = useState({name:"",email:"",password:"",geolocation:""})
+
     const handleSubmit= async(e)=>{
        e.preventDefault();
-       const response = await fetch("http://localhost:3001/api/createuser",{
+       const response = await fetch(`${BASE_URL}/api/createuser`,{
         method:'POST',
         headers:{
             'Content-Type':'application/json'

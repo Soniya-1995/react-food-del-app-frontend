@@ -3,6 +3,8 @@ import { useCart, useDispatchCart } from "../../Component/ContextReducer/Context
 import "./placeorder.css";
 import Navbar from "../../Component/Navbar/Navbar";
 
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
 const Placeorder = () => {
   const cartData = useCart();
   const dispatch = useDispatchCart();
@@ -39,7 +41,7 @@ const Placeorder = () => {
 
     let userEmail = localStorage.getItem("userEmail");
 
-    let response = await fetch("http://localhost:3001/api/orderData", {
+    let response = await fetch(`${BASE_URL}/api/orderData`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

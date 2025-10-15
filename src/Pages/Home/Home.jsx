@@ -4,6 +4,8 @@ import Footer from '../../Component/Footer/Footer'
 import Card from '../../Component/Cards/Card'
 import './home.css'
 
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
 
 const Home = () => {
   const [foodCat, SetFoodCat] = useState([]);
@@ -11,7 +13,7 @@ const Home = () => {
   const [search,SetSearch] = useState('');
 
   const loadData = async () => {
-    let response = await fetch("http://localhost:3001/allfooditem", {
+    let response = await fetch(`${BASE_URL}/allfooditem`, {
       method: "GET",
       headers: {
         'Content-Type': 'application/json'
@@ -25,7 +27,7 @@ const Home = () => {
   }
 
   const catData = async () => {
-    let response1 = await fetch("http://localhost:3001/allcategory", {
+    let response1 = await fetch(`${BASE_URL}/allcategory`, {
       method: "GET",
       headers: {
         'Content-Type': 'application/json'
