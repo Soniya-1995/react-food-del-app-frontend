@@ -1,4 +1,4 @@
-import logo from './khan khazana logo.png'
+import logo from './khana khazana 2.png'
 
 export const assets = {
      logo,

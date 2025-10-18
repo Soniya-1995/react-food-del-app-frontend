@@ -21,7 +21,7 @@ const Navbar = () => {
     <div>
       <nav className="navbar navbar-expand-lg  fst-italic navbar-dark bg-success">
   <div className="container-fluid">
-    <Link className="navbar-brand fs-2 fst-italic" to="/"> <img className='logo w-50%' src={assets.logo} alt="" style={{ width: "120px", height: "80px" }} /></Link>
+    <Link className="navbar-brand fs-2 fst-italic" to="/"> <img className='logo w-50%' src={assets.logo} alt="" style={{ width: "130px", height: "70px", borderRadius:"10px"}} /></Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
